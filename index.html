@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calm Wave Care — Pediatric &amp; Family Chiropractic, Palm Harbor FL</title>
+<meta name="description" content="Gentle, family-centered chiropractic in Palm Harbor, FL. Warm, nervous-system-informed care for neurodivergent kids and the families who love them, alongside your child's medical team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--sage:#7C9A8E;--sage-deep:#5E7B70;--ink:#2B3A33;--cream:#FBF8F1;--sand:#EADFC9;--honey:#D29A3E;--sky:#9FB6C3;--muted:#5C6A62;--white:#FFFFFF}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:17px}
+  h1,h2,h3,.display{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  a{color:var(--sage-deep)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--sage-deep)}
+  .btn{display:inline-block;background:var(--honey);color:#3a2c12;font-weight:700;padding:14px 26px;border-radius:999px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(210,154,62,.3)}
+  .btn.ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.7)}
+  .btn:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+  header{position:sticky;top:0;z-index:20;background:rgba(251,248,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(124,154,142,.25)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1060px;margin:0 auto}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;color:var(--ink);text-decoration:none}
+  .brand small{display:block;font-family:'Nunito Sans',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-deep)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+  .nav-links a:hover{color:var(--ink)}
+  .nav .btn{padding:10px 20px}
+  @media(max-width:820px){.nav-links a:not(.btn){display:none}}
+  /* video hero */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;color:#fff}
+  .hero video,.hero .vfallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero video{object-position:center 35%}
+  .hero .vfallback{background:linear-gradient(135deg,#6f8e82,#9FB6C3 55%,#cbd9cf)}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,58,51,.35),rgba(43,58,51,.55));z-index:1}
+  .hero .inner{position:relative;z-index:2;max-width:760px;padding:40px 24px}
+  .hero .affirm{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);opacity:.95;margin-bottom:10px}
+  .hero h1{font-size:clamp(2.2rem,5.2vw,3.6rem);margin:6px 0 18px;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+  .hero p.lead{font-size:1.12rem;max-width:46ch;margin:0 auto 26px;opacity:.95}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  section{padding:74px 0}
+  .section-head{max-width:62ch;margin-bottom:32px}
+  .section-head h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin:10px 0 12px}
+  .section-head p{color:var(--muted)}
+  .parent{background:var(--white)}
+  .parent-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  @media(max-width:780px){.parent-grid{grid-template-columns:1fr}}
+  .photo-ph{aspect-ratio:4/5;border-radius:20px;background:repeating-linear-gradient(45deg,#e7decb,#e7decb 12px,#efe8d8 12px,#efe8d8 24px);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;text-align:center;padding:20px}
+  .prose p{margin-bottom:16px}
+  .note{background:var(--cream);border-left:4px solid var(--honey);border-radius:0 12px 12px 0;padding:22px 24px;margin:24px 0}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:780px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--white);border:1px solid rgba(124,154,142,.22);border-radius:18px;padding:26px}
+  .card .ic{width:42px;height:42px;border-radius:12px;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px}
+  .card h3{font-size:1.2rem;margin-bottom:8px}.card p{color:var(--muted);font-size:.98rem}
+  /* wellness tabs */
+  .well{background:linear-gradient(180deg,var(--cream),#f3ecdd)}
+  .tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+  .tab{border:1.5px solid var(--sage);background:transparent;color:var(--sage-deep);font-weight:700;font-family:inherit;font-size:.95rem;padding:9px 18px;border-radius:999px;cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep)}
+  .panel{display:none;background:var(--white);border:1px solid rgba(124,154,142,.22);border-radius:16px;padding:26px;max-width:70ch}
+  .panel.active{display:block}
+  .panel h3{font-size:1.25rem;margin-bottom:8px}.panel p{color:var(--muted);margin-bottom:10px}
+  details{background:var(--white);border:1px solid rgba(124,154,142,.22);border-radius:14px;padding:6px 22px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:700;padding:14px 0;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--sage-deep);font-size:1.4rem}
+  details[open] summary::after{content:"\2013"}
+  details p{color:var(--muted);padding-bottom:16px}
+  .contact{background:var(--sage-deep);color:#eef3f0}
+  .contact h2{color:#fff}.contact a{color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  @media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
+  .ph{color:#cdddd5;font-weight:600}
+  footer{background:var(--ink);color:#c7d1cb;font-size:.85rem;padding:40px 0}
+  .disclaimer{background:rgba(255,255,255,.05);border-radius:12px;padding:18px 20px;margin-bottom:18px;line-height:1.6}
+  .ph-tag{color:var(--honey);font-weight:700}
+</style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":["LocalBusiness","MedicalBusiness"],"name":"Calm Wave Care","description":"Pediatric and family chiropractic care in Palm Harbor, Florida.","telephone":"+1-863-860-7725","email":"DRMIKE@MYJETMEDICAL.COM","address":{"@type":"PostalAddress","streetAddress":"2206 Curlew Rd","addressLocality":"Palm Harbor","addressRegion":"FL","postalCode":"34683","addressCountry":"US"},"founder":{"@type":"Person","name":"Dr. Michael Majette, D.C."},"medicalSpecialty":"Chiropractic"}
+  </script>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top">Calm Wave Care<small>Dr. Michael Majette, D.C.</small></a>
+    <div class="nav-links">
+      <a href="#story">Our Story</a>
+      <a href="#wellness">Family Wellness</a>
+      <a href="#approach">Approach</a>
+      <a href="#library">Resources</a>
+      <a href="#shop">Shop</a>
+      <a href="#contact" class="btn">Book a Visit</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- VIDEO HERO. On deploy, Cowork wires the hosted video file (hero-loop.mp4). Gradient shows as fallback in preview. -->
+  <section class="hero">
+    <div class="vfallback" aria-hidden="true"></div>
+    <video autoplay muted loop playsinline poster="">
+      <source src="vid01.mp4" type="video/mp4">
+    </video>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="inner">
+      <h1>Calm Wave Care</h1>
+      <p class="lead">Helping neurodivergent children ride the wave of care to a calmer, focused, and fulfilling life.</p>
+      <p class="lead" style="font-size:1rem;opacity:.92;margin-top:.5rem">Warm, unhurried, and always working alongside your child's care team.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Book a consultation</a>
+        <a href="#story" class="btn ghost">Read our story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="parent" id="story">
+    <div class="wrap parent-grid">
+      <img src="img01.jpg" alt="Dr. Mike Majette, D.C., in his clinic" style="width:100%;height:auto;border-radius:20px;display:block;box-shadow:0 12px 34px rgba(43,58,51,.18)">
+      <div class="prose">
+        <span class="eyebrow">From one parent to another</span>
+        <h2 style="font-size:2rem;margin:10px 0 14px">I'm a dad who gets it.</h2>
+        <p>For more than two decades I've cared for families in my practice. But this work became personal when I began noticing, in my own young son, the early signs that so many parents recognize. Walking that road as a father changed how I show up for every family who comes through my door.</p>
+        <p>I'm not here to promise miracles or to talk you out of the care your child's doctors recommend. I'm here to offer a calm, patient, welcoming place — and to walk beside you as one part of your child's larger team.</p>
+<div style="border:1px solid rgba(124,154,142,.3);border-radius:14px;padding:20px 22px;margin:6px 0 8px;background:var(--cream)">
+          <span class="eyebrow">Credentials &amp; focus</span>
+          <ul style="list-style:none;margin:12px 0 0;padding:0;color:var(--ink)">
+            <li style="padding:5px 0;border-bottom:1px solid rgba(124,154,142,.18)"><strong>Florida Doctor of Chiropractic</strong> &mdash; License&nbsp;#CH8705</li>
+            <li style="padding:5px 0;border-bottom:1px solid rgba(124,154,142,.18)">24 years in private practice &middot; family &amp; pediatric chiropractic, conservative (non-surgical) spinal care</li>
+            <li style="padding:5px 0;border-bottom:1px solid rgba(124,154,142,.18)">Postgraduate training in clinical nutrition and pediatric care &mdash; <span class="ph-tag">[exact program names &amp; issuers to add]</span></li>
+            <li style="padding:5px 0">Special clinical interest in supporting neurodivergent children and their families</li>
+          </ul>
+        </div>
+                
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">
+      <img src="img02.jpg" alt="A child and a caring adult laughing during joyful finger-painting" loading="lazy" style="width:100%;height:300px;object-fit:cover;display:block">
+      <img src="img03.jpg" alt="A young child playing happily outdoors" loading="lazy" style="width:100%;height:300px;object-fit:cover;display:block">
+      <img src="img04.jpg" alt="A child smiling in warm light" loading="lazy" style="width:100%;height:300px;object-fit:cover;display:block">
+    </div>
+  </section>
+
+  <section style="background:var(--white)" id="care">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The care Dr. Mike provides</span>
+        <h2>Hands-on, drug-free care for children and families</h2>
+        <p>Dr. Mike has spent more than two decades refining his craft by hand, much like an old-world European bodywork master &mdash; slowly, patiently, always reaching for greater finesse and sensitivity. If a skilled physical therapist or massage therapist can do it with their hands, he brings that same manual work &mdash; combined with gentle chiropractic adjustments &mdash; to help the body move, settle, and feel at ease.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="ic">&#9995;</div><h3>Gentle chiropractic adjustments</h3><p>Low-force, child-sized techniques that ease restrictions in the joints and spine. The goal is simple: better mobility, less tension, and a body that feels more comfortable and settled.</p></div>
+        <div class="card"><div class="ic">&#128400;</div><h3>Manual &amp; soft-tissue therapy</h3><p>Hands-on myofascial and soft-tissue work that releases tight, guarded muscles and improves how the body moves. The same family of manual therapy a skilled massage or physical therapist uses &mdash; delivered with a chiropractic physician&rsquo;s training and touch.</p></div>
+        <div class="card"><div class="ic">&#127754;</div><h3>Cranial &amp; craniosacral-style work</h3><p>Very light, slow, patient contact at the head, neck, and spine that invites an overstimulated body to soften, slow its breathing, and find a calmer baseline.</p></div>
+        <div class="card"><div class="ic">&#129504;</div><h3>Polyvagal-informed bodywork</h3><p>Gentle work informed by the &ldquo;rest-and-digest&rdquo; nervous system described by Stephen Porges and Stanley Rosenberg &mdash; supporting the calm, connected state where children rest, digest, and feel safe more easily.</p></div>
+        <div class="card"><div class="ic">&#128168;</div><h3>Breath &amp; at-home regulation</h3><p>Simple breathing and self-soothing practices Dr. Mike teaches families to carry home &mdash; small, repeatable tools that support calmer days and steadier nights between visits.</p></div>
+        <div class="card"><div class="ic">&#127822;</div><h3>Clinical nutrition &amp; whole-body support</h3><p>Certified clinical-nutrition guidance to support energy, comfort, and resilience &mdash; practical, food-first foundations that round out your child&rsquo;s care.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:linear-gradient(180deg,var(--cream),#f3ecdd)" id="vagus">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Parent&rsquo;s guide</span>
+        <h2>Your child&rsquo;s &ldquo;rest-and-digest&rdquo; system, in plain language</h2>
+      </div>
+      <div class="prose" style="max-width:66ch">
+        <p>The vagus nerve is the longest cranial nerve in the body, linking the brainstem to the heart, lungs, stomach, and intestines. It&rsquo;s the main pathway of the parasympathetic nervous system &mdash; the &ldquo;rest-and-digest&rdquo; side that helps the body slow down, digest, and feel safe.</p>
+        <p>A helpful way to picture the nervous system is three gears it shifts between through the day:</p>
+        <ul style="color:var(--muted);line-height:1.9">
+          <li><strong>Calm &amp; connected</strong> &mdash; the settled, rest-and-digest state where children sleep, digest, focus, and engage with the people around them.</li>
+          <li><strong>Fight-or-flight</strong> &mdash; the revved-up, alert state the body uses to meet a challenge.</li>
+          <li><strong>Shutdown</strong> &mdash; the withdrawn, &ldquo;checked-out&rdquo; state a system drops into when it&rsquo;s overwhelmed.</li>
+        </ul>
+        <p>When a child can move back toward that first state more easily, daily life tends to feel better &mdash; calmer mornings, easier digestion, steadier sleep. Gentle, hands-on care is one way to support the body in finding that calmer gear.</p>
+        <p style="color:var(--muted);font-size:.97rem"><em>A straight word: this is a way of understanding the nervous system that many clinicians find genuinely useful &mdash; a lens for care, and one the science is still actively discussing. We link both sides in our <a href="#library">Resources</a>, because we&rsquo;d rather you read it yourself.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--sage-deep);color:#eef3f0;text-align:center;padding:66px 0">
+    <div class="wrap">
+      <svg viewBox="0 0 140 22" width="140" height="22" aria-hidden="true" style="display:block;margin:0 auto 16px;opacity:.9">
+        <path d="M0 11 Q 17.5 1 35 11 T 70 11 T 105 11 T 140 11" fill="none" stroke="#D29A3E" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div style="font-family:'Fraunces',serif;font-size:clamp(2rem,5.5vw,3.1rem);font-weight:600;letter-spacing:.01em;line-height:1.1">Calm Wave Care</div>
+      <div style="font-family:'Nunito Sans',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;font-weight:700;color:#cdddd5;margin-top:12px">Dr. Michael Majette, D.C.</div>
+      <p style="max-width:56ch;margin:18px auto 0;color:#dfeae5">Gentle, complementary care — calm, unhurried, and always alongside your child's medical and therapy team.</p>
+    </div>
+  </section>
+
+  <section class="well" id="wellness">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Everyday foundations</span>
+        <h2>Small habits that help kids feel their best</h2>
+        <p>Alongside hands-on care, these are the simple, whole-family foundations Dr. Mike helps parents build on &mdash; the everyday basics that make the biggest difference in how a child feels.</p>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p1">Sleep</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p2">Movement &amp; play</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p3">Nourishment</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p4">Calm</button>
+      </div>
+      <div class="panel active" id="p1"><h3>Steady, restful sleep</h3><p>A predictable wind-down and a calm, dim sleep space help a child&rsquo;s nervous system downshift into rest. Consistent bedtimes, less screen light in the final hour, and a soothing routine give the body the cues it needs to settle and stay asleep.</p></div>
+      <div class="panel" id="p2"><h3>Movement and play</h3><p>Free, joyful movement is one of the best regulators a child has. Climbing, swinging, rolling, and rough-and-tumble play feed the balance and body-awareness systems that help kids feel organized, capable, and at home in their bodies.</p></div>
+      <div class="panel" id="p3"><h3>Balanced nourishment</h3><p>Steady blood sugar makes for steadier moods and focus. Protein-forward meals, real whole foods, and regular snacks keep a child&rsquo;s energy even &mdash; the practical, food-first foundation Dr. Mike&rsquo;s clinical-nutrition guidance builds on.</p></div>
+      <div class="panel" id="p4"><h3>A calmer baseline</h3><p>Children co-regulate with the calm adults around them. Slow breathing, unhurried transitions, and plenty of quiet, connected time help a busy nervous system find its rest-and-digest gear &mdash; at home and in the treatment room.</p></div>
+    </div>
+  </section>
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Our approach</span><h2>What care looks like here</h2></div>
+      <div class="cards">
+        <div class="card"><div class="ic">&#127807;</div><h3>Gentle &amp; child-paced</h3><p>Low-force and comfortable, chosen for a child's size and ease — never rushed, never forced.</p></div>
+        <div class="card"><div class="ic">&#129309;</div><h3>Parents stay close</h3><p>You're beside your child for everything. Questions welcome; nothing happens without your understanding.</p></div>
+        <div class="card"><div class="ic">&#129658;</div><h3>Part of your team</h3><p>We coordinate with your pediatrician and specialists. Good care is collaborative, not competitive.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--white)">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Common questions</span><h2>Honest answers, plainly given</h2></div>
+      <div style="max-width:740px">
+        <details><summary>What techniques do you use?</summary><p>Gentle chiropractic adjustments, manual and soft-tissue therapy, cranial and craniosacral-style work, polyvagal-informed bodywork, breath and regulation coaching, and clinical-nutrition guidance &mdash; chosen and combined for each child&rsquo;s age, comfort, and needs.</p></details>
+        <details><summary>What happens at a first visit?</summary><p>We start with a relaxed conversation about your child&rsquo;s history and what you&rsquo;re hoping for. Care is unhurried and consent-based, you stay beside your child the whole time, and we go only as far as your child is comfortable going that day.</p></details>
+        <details><summary>Is this care safe for babies and children?</summary><p>Yes &mdash; Dr. Mike uses gentle, low-force, child-sized techniques, and nothing happens without your understanding and consent. He has a special clinical interest in neurodivergent children and tailors everything to the child in front of him.</p></details>
+        <details><summary>Will this treat or cure my child&rsquo;s autism?</summary><p>No &mdash; and be cautious of anyone who promises that. Dr. Mike doesn&rsquo;t diagnose, treat, or cure autism or any developmental condition. What he offers is gentle, comfort-focused care and warm support for your child and family, working alongside the medical team already caring for them. Medication and medical decisions always stay with you and your child&rsquo;s doctors.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="library" style="background:linear-gradient(180deg,#f3ecdd,var(--cream))">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Resources &amp; reading</span>
+        <h2>A library for families &mdash; and the clinicians who care for them</h2>
+        <p>Independent, trustworthy information to help you understand your child&rsquo;s nervous system and the care offered here. Read widely, ask good questions, and bring what you find to your child&rsquo;s care team.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:8px">
+        <div class="card">
+          <div class="ic">&#129504;</div>
+          <h3>Understanding the nervous system</h3>
+          <p>Background on the vagus nerve and the &ldquo;rest-and-digest&rdquo; system.</p>
+          <ul style="list-style:none;margin:8px 0 0;padding:0">
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://my.clevelandclinic.org/health/body/22279-vagus-nerve" target="_blank" rel="noopener">Cleveland Clinic &mdash; The vagus nerve, explained</a></li>
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://www.ncbi.nlm.nih.gov/books/NBK537171/" target="_blank" rel="noopener">NCBI StatPearls &mdash; Cranial Nerve 10 <span style="color:var(--muted)">(for clinicians)</span></a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ic">&#9878;&#65039;</div>
+          <h3>The science, told straight</h3>
+          <p>&ldquo;Polyvagal-informed&rdquo; care draws on a model many clinicians find useful and that is also actively <em>debated</em>. Here&rsquo;s both sides.</p>
+          <ul style="list-style:none;margin:8px 0 0;padding:0">
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://journalofpsychiatryreform.com/2023/10/17/polyvagal-approaches-scientifically-questionable-but-useful-in-practice/" target="_blank" rel="noopener">Polyvagal approaches: questioned, yet useful in practice</a></li>
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12937496" target="_blank" rel="noopener">Stephen Porges responds to the critique <span style="color:var(--muted)">(2026)</span></a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ic">&#128118;</div>
+          <h3>For families</h3>
+          <p>Pediatrician-written guidance on everyday foundations.</p>
+          <ul style="list-style:none;margin:8px 0 0;padding:0">
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://www.healthychildren.org/English/healthy-living/sleep/Pages/default.aspx" target="_blank" rel="noopener">AAP HealthyChildren.org &mdash; Children&rsquo;s sleep</a></li>
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://www.cdc.gov/autism/about/information-for-families.html" target="_blank" rel="noopener">CDC &mdash; Information for families (milestones &amp; screening)</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ic">&#129309;</div>
+          <h3>Autism support &amp; acceptance</h3>
+          <p>Advocacy, community, and respectful information.</p>
+          <ul style="list-style:none;margin:8px 0 0;padding:0">
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://autismsociety.org" target="_blank" rel="noopener">Autism Society &mdash; advocacy, support &amp; local chapters</a></li>
+            <li style="padding:6px 0;border-top:1px solid rgba(124,154,142,.18)"><a href="https://autisticadvocacy.org" target="_blank" rel="noopener">Autistic Self Advocacy Network &mdash; acceptance &amp; self-advocacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="note" style="margin-top:24px">
+        <strong>Where this approach comes from.</strong> The polyvagal-informed perspective here draws on the work of Stephen W. Porges (Polyvagal Theory) and Stanley Rosenberg (<em>Accessing the Healing Power of the Vagus Nerve</em>, North Atlantic Books, 2017) &mdash; shared so you can explore the source ideas yourself.
+      </div>
+      <p style="color:var(--muted);margin-top:16px;font-size:.97rem"><strong>For referring physicians:</strong> this library is meant as a shared, honest resource you can point families to. To collaborate or suggest a resource, reach Dr.&nbsp;Mike at <a href="mailto:DRMIKE@MYJETMEDICAL.COM">DRMIKE@MYJETMEDICAL.COM</a>.</p>
+    </div>
+  </section>
+
+  <section id="gallery" style="background:var(--white)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">A warm welcome</span>
+        <h2>Every family belongs here</h2>
+        <p>Calm, unhurried, and built for real kids &mdash; exactly as they are.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+        <img src="img05.jpg" alt="A parent and child stretching and moving together" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img06.jpg" alt="A caring adult and a child sitting close, connecting calmly" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img07.jpg" alt="A smiling young child" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img08.jpg" alt="A child hugging a soft toy, feeling settled" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img09.jpg" alt="A focused child reaching out during play" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img10.jpg" alt="Children spending quiet time together in a calm, book-filled room" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img11.jpg" alt="A young child resting cozily, calm and content" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img12.jpg" alt="A parent holding their child close in a sunlit field" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img13.jpg" alt="A child holding a caring adult's hand" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img14.jpg" alt="A parent and child laughing together at golden hour" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img15.jpg" alt="A child laughing outdoors" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img16.jpg" alt="A child resting calmly against a caring adult" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img17.jpg" alt="A child and adult sharing a calm, forehead-to-forehead moment" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img18.jpg" alt="A family of three close together outdoors" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img19.jpg" alt="A child laughing happily" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <img src="img20.jpg" alt="A child and adult laughing together on the swings" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" style="background:linear-gradient(180deg,var(--cream),#f3ecdd)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Shop</span>
+        <h2>Calm, sensory &amp; comfort tools we trust</h2>
+        <p>A small, hand-picked shop of calming and sensory items, branded keepsakes, and parent guides &mdash; chosen for comfort, focus, and play. Tools to support a calmer day, never a substitute for your child&rsquo;s care team.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:8px">
+        <div class="card"><div class="ic">&#129505;</div><h3>Calming &amp; weighted</h3><p>Lap pads, body socks, and deep-pressure comforts.</p></div>
+        <div class="card"><div class="ic">&#127744;</div><h3>Fidgets &amp; focus</h3><p>Tactile fidgets, putty, and quiet hand tools.</p></div>
+        <div class="card"><div class="ic">&#127769;</div><h3>Sleep &amp; quiet</h3><p>Night lights, soft sound, and bedtime wind-down.</p></div>
+        <div class="card"><div class="ic">&#127939;</div><h3>Movement &amp; play</h3><p>Wobble cushions, balance, and sensory play.</p></div>
+        <div class="card"><div class="ic">&#128214;</div><h3>Books &amp; guides</h3><p>Parent guides and gentle books on big feelings.</p></div>
+        <div class="card"><div class="ic">&#127754;</div><h3>Calm Wave Care</h3><p>Branded keepsakes and our own calming printables.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:28px">
+        <a href="#contact" class="btn">Shop opening soon &mdash; ask what&rsquo;s coming</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow" style="color:#cdddd5">Reach out</span>
+        <h2 style="font-size:2rem;margin:10px 0 14px">Let's find a calm starting point.</h2>
+        <p style="color:#dfeae5">Send a note or call to ask a question or schedule a gentle first visit.</p>
+      </div>
+      <div>
+        <p style="margin-bottom:8px"><span class="ph">Email:</span> DRMIKE@MYJETMEDICAL.COM</p>
+        <p style="margin-bottom:8px"><span class="ph">Phone:</span> 863.860.7725</p>
+        <p style="margin-bottom:20px"><span class="ph">Office:</span> 2206 Curlew Rd, Palm Harbor, FL 34683</p>
+        <a href="mailto:DRMIKE@MYJETMEDICAL.COM" class="btn">Email Dr. Mike</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer"><strong>Important:</strong> This website is for general education only and is not medical advice. Dr. Michael Majette, D.C. does not diagnose, treat, cure, or prevent autism, sensory processing disorders, developmental delays, or any disease, and does not provide an alternative to prescribed medical care. Chiropractic care is gentle, complementary support and is not a substitute for evaluation and treatment by your pediatrician or medical specialists. Always consult your child's healthcare team before making care decisions. Individual experiences vary, and no specific outcome is promised.</div>
+    <p>&copy; <span id="yr"></span> Calm Wave Care &middot; Dr. Michael Majette, D.C.</p>
+  </div>
+</footer>
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected','false')});
+      document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+      t.setAttribute('aria-selected','true');
+      document.getElementById(t.dataset.p).classList.add('active');
+    });
+  });
+</script>
+  <audio id="vw-bgm" loop preload="none"><source src="aud01.mp3" type="audio/mpeg"></audio>
+  <button id="vw-sound" type="button" aria-label="Play gentle background music" title="Gentle background music"
+    style="position:fixed;bottom:18px;right:18px;z-index:60;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:var(--sage-deep,#2b3a33);color:#fff;font-size:20px;line-height:1;box-shadow:0 6px 18px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center">&#128264;</button>
+  <script>
+  (function(){
+    var a=document.getElementById('vw-bgm'),b=document.getElementById('vw-sound'),on=false,t;
+    function fade(to){clearInterval(t);var step=(to-a.volume)/15;t=setInterval(function(){var v=a.volume+step;if((step>0&&v>=to)||(step<0&&v<=to)){v=to;clearInterval(t);}a.volume=Math.max(0,Math.min(1,v));if(to===0&&a.volume===0){a.pause();}},40);}
+    b.addEventListener('click',function(){on=!on;if(on){a.volume=0;var p=a.play();if(p&&p.then){p.then(function(){fade(0.35);}).catch(function(){on=false;b.innerHTML='&#128264;';});}else{fade(0.35);}b.innerHTML='&#128266;';b.setAttribute('aria-label','Mute background music');}else{fade(0);b.innerHTML='&#128264;';b.setAttribute('aria-label','Play gentle background music');}});
+  })();
+  </script>
+</body>
+</html>
